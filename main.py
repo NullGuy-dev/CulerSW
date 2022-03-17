@@ -70,7 +70,7 @@ while True:
 				break
 		cap.release()
 		cv2.destroyAllWindows()
-	elif command == "dosattack" or command == "ddosattack":
+	elif command == "dosattack":
 		print("Do not use this command for malicious intent? you are responsible your own affairs. Are you sure to do this?\n[Yes/y][No/n]")
 		chosed = input("$ ")
 		if chosed == "y":
