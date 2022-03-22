@@ -9,6 +9,8 @@ import colorama
 import webbrowser
 import random
 folder = "~"
+print("CulerSW 0.0.2v")
+print(colorama.Fore.GREEN + "By: Bogdan Tanov")
 while True:
 	command = input(f"[{folder}] $ ")
 	if "cd " in command:
@@ -16,52 +18,12 @@ while True:
 		folder = command.replace("cd ","")
 	elif command == "getip":
 		print(stun.get_ip_info()[1])
-	elif command == "getlocation" or command == "getgeolocaltion":
+	elif command == "getlocation":
 		print(f"Location : \n{geocoder.ip('me')}\n Geolocation : \n{geocoder.ip('me').latlng[0]},{geocoder.ip('me').latlng[1]}")
 	elif command == "openlocation":
 		webbrowser.open_new_tab(f"https://www.google.com.ua/maps/place/{geocoder.ip('me').latlng[0]},{geocoder.ip('me').latlng[1]}")
-	elif command == "getcamera[1]":
+	elif command == "getcamera":
 		cap = cv2.VideoCapture(0)
-		while cap.isOpened():
-			success, img = cap.read()
-			img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-			cv2.imshow("Camera", img)
-			if cv2.waitKey(1) & 0xff == ord('x'):
-				break
-		cap.release()
-		cv2.destroyAllWindows()
-	elif command == "getcamera[2]":
-		cap = cv2.VideoCapture(1)
-		while cap.isOpened():
-			success, img = cap.read()
-			img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-			cv2.imshow("Camera", img)
-			if cv2.waitKey(1) & 0xff == ord('x'):
-				break
-		cap.release()
-		cv2.destroyAllWindows()
-	elif command == "getcamera[3]":
-		cap = cv2.VideoCapture(2)
-		while cap.isOpened():
-			success, img = cap.read()
-			img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-			cv2.imshow("Camera", img)
-			if cv2.waitKey(1) & 0xff == ord('x'):
-				break
-		cap.release()
-		cv2.destroyAllWindows()
-	elif command == "getcamera[4]":
-		cap = cv2.VideoCapture(3)
-		while cap.isOpened():
-			success, img = cap.read()
-			img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-			cv2.imshow("Camera", img)
-			if cv2.waitKey(1) & 0xff == ord('x'):
-				break
-		cap.release()
-		cv2.destroyAllWindows()
-	elif command == "getcamera[5]":
-		cap = cv2.VideoCapture(4)
 		while cap.isOpened():
 			success, img = cap.read()
 			img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -99,5 +61,12 @@ while True:
 			chosse = input("$ ")
 			if chosse == "y":
 				webbrowser.open_new_tab(f"https://www.google.com.ua/maps/place/{geocoder.ip(IP).latlng[0]}, {geocoder.ip(IP).latlng[1]}")
+	elif command == "line --help" or command == "line -h":
+		print("getip - get ip")
+		print("getlocation - get geolocation")
+		print("openlocation - open google map with your location")
+		print("getcamera- open window with camera image")
+		print("dosattack - dos attack to website")
+		print("foundinip - get geolocation with user ip")
 	else:
 		os.system(command)
