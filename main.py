@@ -1,4 +1,4 @@
-# python 3.9
+# -*- coding: utf-8 -*-
 import os
 import stun
 import geocoder
