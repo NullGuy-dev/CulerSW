@@ -9,8 +9,7 @@ import colorama
 import webbrowser
 import random
 folder = "~"
-print("CulerSW 0.0.2v")
-print(colorama.Fore.GREEN + "By: Bogdan Tanov")
+print(f"{colorama.Fore.RED}CulerSW {colorama.Fore.BLUE}0.0.2v{colorama.Fore.GREEN}")
 while True:
 	command = input(f"[{folder}] $ ")
 	if "cd " in command:
