@@ -44,7 +44,6 @@ while True:
 		cap.release()
 		cv2.destroyAllWindows()
 	elif command == "dosattack":
-		# For test: https://12school.com.ua
 		if (language["language"] == "en"):
 			print("Do not use this command for malicious intent? you are responsible your own affairs. Are you sure to do this?\n[Yes/y][No/n]")
 		elif (language["language"] == "en"):
